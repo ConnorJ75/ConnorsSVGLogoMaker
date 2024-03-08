@@ -34,36 +34,38 @@ const questions = [
 ]
 function getLogoDetails() {
     inquirer.prompt(questions).then((responses)=>{
-        console.log(responses);
         if (responses.shape === 'Triangle'){
             let newTri = new Triangle();
             newTri.setColor(responses.shapeColor);
             newTri.setText(responses.text);
             newTri.setTextColor(responses.textColor);
-            fs.writeFileSync("./shapeTester.svg", 
+            fs.writeFileSync("./logo.svg", 
             `<svg height="220" width="500" xmlns="http://www.w3.org/2000/svg"> 
                 ${newTri.render()}
             </svg>`);
+            console.log("Generated logo.svg");
         }
         else if (responses.shape === 'Circle'){
             let newCirc = new Circle();
             newCirc.setColor(responses.shapeColor);
             newCirc.setText(responses.text);
             newCirc.setTextColor(responses.textColor);
-            fs.writeFileSync("./shapeTester.svg", 
+            fs.writeFileSync("./logo.svg", 
             `<svg height="220" width="500" xmlns="http://www.w3.org/2000/svg"> 
                 ${newCirc.render()}
             </svg>`);
+            console.log("Generated logo.svg");
         }
         else if (responses.shape === 'Square'){
             let newSquare = new Square();
             newSquare.setColor(responses.shapeColor);
             newSquare.setText(responses.text);
             newSquare.setTextColor(responses.textColor);
-            fs.writeFileSync("./shapeTester.svg", 
+            fs.writeFileSync("./logo.svg", 
             `<svg height="220" width="500" xmlns="http://www.w3.org/2000/svg"> 
                 ${newSquare.render()}
             </svg>`);
+            console.log("Generated logo.svg");
         }
     });
 }
