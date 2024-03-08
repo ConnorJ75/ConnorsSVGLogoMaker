@@ -1,0 +1,14 @@
+{
+  "name": "connorssvglogomaker",
+  "version": "1.0.0",
+  "description": "Creates an SVG file logo based on specifications given by the user.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "8.2.4"
+  }
+}
