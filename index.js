@@ -1,3 +1,4 @@
+const fs = require("fs");
 const inquirer = require("inquirer");
 const { Triangle, Square, Circle } = require("./lib/shapes");
 
@@ -35,13 +36,34 @@ function getLogoDetails() {
     inquirer.prompt(questions).then((responses)=>{
         console.log(responses);
         if (responses.shape === 'Triangle'){
-            console.log("They chose a triangle!!!");
+            let newTri = new Triangle();
+            newTri.setColor(responses.shapeColor);
+            newTri.setText(responses.text);
+            newTri.setTextColor(responses.textColor);
+            fs.writeFileSync("./shapeTester.svg", 
+            `<svg height="220" width="500" xmlns="http://www.w3.org/2000/svg"> 
+                ${newTri.render()}
+            </svg>`);
         }
         else if (responses.shape === 'Circle'){
-            console.log("They chose a circle!!!");
+            let newCirc = new Circle();
+            newCirc.setColor(responses.shapeColor);
+            newCirc.setText(responses.text);
+            newCirc.setTextColor(responses.textColor);
+            fs.writeFileSync("./shapeTester.svg", 
+            `<svg height="220" width="500" xmlns="http://www.w3.org/2000/svg"> 
+                ${newCirc.render()}
+            </svg>`);
         }
         else if (responses.shape === 'Square'){
-            console.log("They chose a square!!!");
+            let newSquare = new Square();
+            newSquare.setColor(responses.shapeColor);
+            newSquare.setText(responses.text);
+            newSquare.setTextColor(responses.textColor);
+            fs.writeFileSync("./shapeTester.svg", 
+            `<svg height="220" width="500" xmlns="http://www.w3.org/2000/svg"> 
+                ${newSquare.render()}
+            </svg>`);
         }
     });
 }
