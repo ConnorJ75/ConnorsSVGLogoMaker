@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const { Triangle, Square, Circle } = require("./lib/shapes");
 
 const questions = [
     {
@@ -32,8 +33,16 @@ const questions = [
 ]
 function getLogoDetails() {
     inquirer.prompt(questions).then((responses)=>{
-
         console.log(responses);
+        if (responses.shape === 'Triangle'){
+            console.log("They chose a triangle!!!");
+        }
+        else if (responses.shape === 'Circle'){
+            console.log("They chose a circle!!!");
+        }
+        else if (responses.shape === 'Square'){
+            console.log("They chose a square!!!");
+        }
     });
 }
 

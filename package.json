@@ -4,11 +4,14 @@
   "description": "Creates an SVG file logo based on specifications given by the user.",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "jest --watchAll"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "inquirer": "8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
